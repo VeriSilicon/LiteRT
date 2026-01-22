@@ -23,6 +23,7 @@ add_library(litert_c_options STATIC
     litert_gpu_options.cc
     litert_intel_openvino_options.cc
     litert_mediatek_options.cc
+    litert_verisilicon_options.cc
     litert_qualcomm_options.cc
     litert_runtime_options.cc
     litert_compiler_options.cc

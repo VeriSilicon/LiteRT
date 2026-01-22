@@ -690,6 +690,7 @@ cc_library(
         "//litert/cc/dynamic_runtime/options:litert_intel_openvino_options",
         "//litert/cc/dynamic_runtime/options:litert_mediatek_options",
         "//litert/cc/dynamic_runtime/options:litert_qualcomm_options",
+        "//litert/cc/dynamic_runtime/options:litert_verisilicon_options",
         "//litert/cc/dynamic_runtime/options:litert_runtime_options",
         "//litert/cc/internal:litert_handle",
         "//litert/cc/internal:scoped_file",

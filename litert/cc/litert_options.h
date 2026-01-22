@@ -37,6 +37,7 @@
 #include "litert/cc/options/litert_intel_openvino_options.h"
 #include "litert/cc/options/litert_mediatek_options.h"
 #include "litert/cc/options/litert_qualcomm_options.h"
+#include "litert/cc/options/litert_verisilicon_options.h"
 #include "litert/cc/options/litert_runtime_options.h"
 #include "litert/cc/internal/scoped_file.h"
 #include "litert/cc/internal/scoped_weight_source.h"
@@ -223,6 +224,11 @@ class Options : public internal::Handle<LiteRtOptions, LiteRtDestroyOptions> {
   /// Use this to configure Intel OpenVINO-specific settings.
   Expected<intel_openvino::IntelOpenVinoOptions&> GetIntelOpenVinoOptions();
 
+  /// Returns a reference to the Verisilicon options.
+  ///
+  /// Use this to configure Verisilicon-specific settings.
+  Expected<verisilicon::VerisiliconOptions&> GetVerisiliconOptions();
+
   /// Returns a reference to the runtime options.
   Expected<RuntimeOptions&> GetRuntimeOptions();
 
@@ -242,6 +248,7 @@ class Options : public internal::Handle<LiteRtOptions, LiteRtDestroyOptions> {
   std::optional<mediatek::MediatekOptions> mediatek_options_;
   std::optional<google_tensor::GoogleTensorOptions> google_tensor_options_;
   std::optional<intel_openvino::IntelOpenVinoOptions> intel_openvino_options_;
+  std::optional<verisilicon::VerisiliconOptions> verisilicon_options_;
   std::optional<RuntimeOptions> runtime_options_;
   std::optional<CompilerOptions> compiler_options_;
 };

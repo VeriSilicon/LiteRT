@@ -16,6 +16,7 @@
 #define INCLUDE_MEDIATEK_RUNTIME_FLAGS
 #define INCLUDE_INTEL_OPENVINO_RUNTIME_FLAGS
 #define INCLUDE_GOOGLE_TENSOR_RUNTIME_FLAGS
+#define INCLUDE_VERISILICON_RUNTIME_FLAGS
 
 #include <algorithm>
 #include <cstddef>
@@ -48,6 +49,7 @@
 #include "litert/tools/flags/vendors/intel_openvino_flags.h"  // IWYU pragma: keep
 #include "litert/tools/flags/vendors/mediatek_flags.h"  // IWYU pragma: keep
 #include "litert/tools/flags/vendors/qualcomm_flags.h"  // IWYU pragma: keep
+#include "litert/tools/flags/vendors/verisilicon_flags.h"  // IWYU pragma: keep
 #include "litert/tools/tensor_utils.h"
 #include "tflite/profiling/time.h"
 
@@ -83,6 +85,7 @@ using ::litert::google_tensor::UpdateGoogleTensorOptionsFromFlags;
 using ::litert::intel_openvino::UpdateIntelOpenVinoOptionsFromFlags;
 using ::litert::mediatek::UpdateMediatekOptionsFromFlags;
 using ::litert::qualcomm::UpdateQualcommOptionsFromFlags;
+using ::litert::verisilicon::UpdateVerisiliconOptionsFromFlags;
 
 litert::HwAcceleratorSet GetAccelerator() {
   const std::string accelerator_str = absl::GetFlag(FLAGS_accelerator);
@@ -142,6 +145,8 @@ Expected<Options> GetOptions() {
       UpdateIntelOpenVinoOptionsFromFlags(intel_openvino_opts));
   LITERT_ASSIGN_OR_RETURN(auto& mediatek_opts, options.GetMediatekOptions());
   LITERT_RETURN_IF_ERROR(UpdateMediatekOptionsFromFlags(mediatek_opts));
+  LITERT_ASSIGN_OR_RETURN(auto& verisilicon_opts, options.GetVerisiliconOptions());
+  LITERT_RETURN_IF_ERROR(UpdateVerisiliconOptionsFromFlags(verisilicon_opts));
   return options;
 }
 
