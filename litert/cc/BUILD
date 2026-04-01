@@ -1051,6 +1051,7 @@ cc_library_with_testonly_vis(
         "//litert/cc/options:litert_intel_openvino_options",
         "//litert/cc/options:litert_mediatek_options",
         "//litert/cc/options:litert_qualcomm_options",
+        "//litert/cc/options:litert_verisilicon_options",
         "//litert/cc/options:litert_runtime_options",
         "//litert/core:options",
         "@com_google_absl//absl/container:flat_hash_map",
@@ -1193,6 +1194,7 @@ cc_library(
         "//litert/cc/options:litert_qualcomm_options.h",
         "//litert/cc/options:litert_runtime_options.h",
         "//litert/cc/options:litert_intel_openvino_options.h",
+        "//litert/cc/options:litert_verisilicon_options.h",
         # Other headers needed by the C++ API headers.
         "//litert/cc/internal:litert_c_types_printing.h",
         "//litert/cc/internal:litert_consts.h",
@@ -1281,6 +1283,7 @@ cc_library(
             # C++ NPU Options API targets.
             "//litert/cc/dynamic_runtime/options:litert_google_tensor_options",
             "//litert/cc/dynamic_runtime/options:litert_mediatek_options",
+            "//litert/cc/dynamic_runtime/options:litert_verisilicon_options",
         ],
     }) + gles_headers(),
 )

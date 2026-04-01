@@ -27,6 +27,7 @@ add_library(litert_cc_options STATIC
     litert_intel_openvino_options.cc
     litert_mediatek_options.cc
     litert_qualcomm_options.cc
+    litert_verisilicon_options.cc
     litert_runtime_options.cc
 )
 
